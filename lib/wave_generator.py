@@ -1,44 +1,64 @@
 def pand(s1, s2):
-	if s1 == 2 or s2 == 2:
-		return 2
+	if s1 == 2:
+		if s2 == 0:
+			return 0
+		else:
+			return 2
+	elif s2 == 2:
+		if s1 == 0:
+			return 0
+		else:
+			return 2
 	return int(s1 and s2)
 
 def pnand(s1, s2):
-	if s1 == 2 or s2 == 2:
-		return 2
-	elif s1 == 2:
-		return int(not s2)
+	if s1 == 2:
+		if s2 == 1:
+			return 0
+		else:
+			return 2
 	elif s2 == 2:
-		return int(not s1)
+		if s1 == 1:
+			return 0
+		else:
+			return 2
 	return int(not(s1 and s2))
 
 def por(s1, s2):
-	if s1 == 2 and s2 == 2:
-		return 2
-	elif s1 == 2:
-		return s2
+	if s1 == 2:
+		if s2 == 1:
+			return 1
+		else:
+			return 2
 	elif s2 == 2:
-		return s1
+		if s1 == 1:
+			return 1
+		else:
+			return 2
 	return int(s1 or s2)
 
 def pnor(s1, s2):
-	if s1 == 2 and s2 == 2:
-		return 2
-	elif s1 == 2:
-		return int(not(s2))
+	if s1 == 2:
+		if s2 == 0:
+			return 1
+		else:
+			return 2
 	elif s2 == 2:
-		return int(not(s1))
+		if s1 == 0:
+			return 1
+		else:
+			return 2
 	return int(not(s1 or s2))
 
 def pxor(s1, s2):
 	if s1 == 2 or s2 == 2:
 		return 2
-	return int(s1 != s2)
+	return s1 == s2
 
 def pxnor(s1, s2):
 	if s1 == 2 or s2 == 2:
 		return 2
-	return int(not xor(s1, s2))
+	return s1 != s2
 
 def pnot(s1):
 	if s1 == 2:
